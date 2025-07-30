@@ -8,6 +8,18 @@
   <link rel="stylesheet" href="style.css">
   <!-- AOS CSS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <styles>
+    /* Optional custom styles */
+body {
+  scroll-behavior: smooth;
+}
+.card {
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+  </styles>
 </head>
 <body>
 
@@ -137,5 +149,29 @@
     once: true,
   });
 </script>
+  <script>
+    // Bootstrap validation + fake submission
+(() => {
+  'use strict';
+
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      event.stopPropagation();
+      form.classList.add('was-validated');
+      return;
+    }
+
+    // Fake send
+    formMessage.textContent = 'Message sent successfully!';
+    formMessage.className = 'alert alert-success';
+    form.reset();
+    form.classList.remove('was-validated');
+  });
+})();
+  </script>
 </body>
 </html>
