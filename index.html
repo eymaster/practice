@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <img src="https://via.placeholder.com/600x300" alt="Hero Image" />
+      <h2>Your Name</h2>
+      <p>Web Developer | Designer | Creator</p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm a passionate web developer who loves creating beautiful and functional websites.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <label>Name:<br>
+          <input type="text" id="name" required />
+        </label><br>
+        <label>Email:<br>
+          <input type="email" id="email" required />
+        </label><br>
+        <label>Message:<br>
+          <textarea id="message" required></textarea>
+        </label><br>
+        <button type="submit">Send</button>
+        <p id="form-msg"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
