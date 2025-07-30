@@ -1,22 +1,22 @@
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-  e.preventDefault();
+// Bootstrap validation + fake submission
+(() => {
+  'use strict';
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const msgDisplay = document.getElementById('form-msg');
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
 
-  if (!name || !email || !message) {
-    msgDisplay.textContent = "Please fill out all fields.";
-    msgDisplay.style.color = "red";
-    return;
-  }
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      event.stopPropagation();
+      form.classList.add('was-validated');
+      return;
+    }
 
-  // Simulate sending message
-  msgDisplay.textContent = "Message sent successfully!";
-  msgDisplay.style.color = "green";
-
-  // Reset form
-  this.reset();
-});
-
+    // Fake send
+    formMessage.textContent = 'Message sent successfully!';
+    formMessage.className = 'alert alert-success';
+    form.reset();
+    form.classList.remove('was-validated');
+  });
+})();
